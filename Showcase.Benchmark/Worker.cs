@@ -10,7 +10,7 @@ public class Worker : BackgroundService
 {
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        BenchmarkRunner.Run<ConcatenatingStringBenchmark>();
+        BenchmarkRunner.Run<YieldReturnBenchmark>();
 
         await Task.CompletedTask;
     }

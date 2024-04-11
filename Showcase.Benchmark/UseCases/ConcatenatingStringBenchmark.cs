@@ -7,7 +7,7 @@ namespace Showcase.Benchmark.UseCases
     [MemoryDiagnoser]
     public class ConcatenatingStringBenchmark
     {
-        const int Iterations = 1000;
+        private const int Iterations = 1000;
 
         [Benchmark]
         public string ConcatenatingString()
@@ -25,8 +25,8 @@ namespace Showcase.Benchmark.UseCases
         {
             var stringBuilder = new StringBuilder();
 
-            for (int index = 0; index < Iterations; index++)            
-                stringBuilder.Append("Thiago Andrade Florencio" + index);            
+            for (int index = 0; index < Iterations; index++)
+                stringBuilder.Append("Thiago Andrade Florencio" + index);
 
             return stringBuilder.ToString();
         }
@@ -39,7 +39,7 @@ namespace Showcase.Benchmark.UseCases
             for (int index = 0; index < Iterations; index++)
                 list.Add("Thiago Andrade Florencio" + index);
 
-            return list.ToString();
+            return list.ToString()!;
         }
     }
 }

@@ -7,14 +7,14 @@ namespace Showcase.Benchmark.UseCases
     [MemoryDiagnoser]
     public class YieldReturnBenchmark
     {
-        const int Iterations = 1000;
+        private const int Iterations = 1000;
 
         private readonly Consumer _consumer = new();
 
         [Benchmark]
         public void WithoutYieldReturn()
         {
-            GenerateResults().Consume(_consumer);                        
+            GenerateResults().Consume(_consumer);
         }
 
         [Benchmark]
